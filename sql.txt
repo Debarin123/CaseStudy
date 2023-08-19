@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  DDL for Table BOOKS
+--------------------------------------------------------
+
+  CREATE TABLE BOOKS 
+   (	"BOOKID" NUMBER, 
+	"BOOKNAME" VARCHAR2(50 ), 
+	"ISBN" VARCHAR2(20)
+   ) 
