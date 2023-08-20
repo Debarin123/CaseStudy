@@ -11,11 +11,20 @@ public class Main {
 		try {
 			//Establishing connection to database
 			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","scott","tiger");
-            		// Create table if not exists
-		        try (Statement statement = con.createStatement()) {
-		        	String createTableSQL = "CREATE TABLE IF NOT EXISTS books (bookid int ,bookname varchar(50),isbn varchar(20)";
-		                statement.execute(createTableSQL);
+			System.out.println("Want to create new table Press 1: ");
+			int k=sc.nextInt();
+			if(k==1) {
+				// Drop table
+				try (Statement dropStat = con.createStatement()) {
+	                dropStat.execute("DROP TABLE books");
+	            } catch (SQLException ex) {
+	            }	
+				// Create table 
+		        try (Statement stat = con.createStatement()) {
+		        	String createTableSQL = "CREATE TABLE books (bookid number,bookname varchar(50),isbn varchar(20))";
+		                stat.execute(createTableSQL);
 		        }
+		    }
 			while(true) {
 				System.out.println("\n=========================================");
 				System.out.println("        Book Management System");
