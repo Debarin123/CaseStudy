@@ -77,7 +77,7 @@ public class Main {
 							int id1=result.getInt("bookid");
 							String name=result.getString("bookname");
 							String isbn=result.getString("isbn");
-							System.out.println("Book id: "+id1+"Book name: "+name+"Book ISBN: "+isbn);
+							System.out.println("Book id: "+id1+" Book name: "+name+" Book ISBN: "+isbn);
 						}
 					}
 					break;
